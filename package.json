@@ -19,16 +19,22 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "build": "rd /s /q dist && babel backend -d dist",
+    "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/basir/amazona.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/basir/amazona/issues"
   },
-  "homepage": "https://github.com/basir/amazona#readme"
+  "homepage": "https://github.com/basir/amazona#readme",
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  }
+
 }
